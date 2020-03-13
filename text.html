@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script text="javascript">
+        function sum(a,b){
+            return a+b;
+        }
+
+        var sum2=function(a,b){
+            return a+b;
+        }
+
+        var show=function(f){
+            return f(3,5);
+        }
+
+        var show1=function(){
+            return function(a,b){
+                return a+b;
+            }
+        }
+
+        alert(show(sum2));
+        alert(show1()(3,6));
+
+        (function(a,b){
+            return a+b;
+        })(4,5);//一次性用
+
+        //(a,b) => a+b,(5,5)
+
+        alert(typeof(sum2)+" "+sum2(3,4));
+
+        function reduce(array, combine, start) {
+            let current = start;
+            for (let element of array) {
+              current = combine(current, element);
+            }
+              return current;
+            }
+        var arry=[
+            {name:"英语",credit:2},
+            {name:"软件技术导论",credit:2},
+            {name:"静态网页技术",credit:2},
+            {name:"计算机安装与维护",credit:2},
+            {name:"程序设计基础",credit:2},
+        ]
+        console.log(reduce(arry,
+            function(a,b){
+              return a+b.credit;
+            },0));
+        
+        console.log(reduce([1, 2, 3, 4], 
+        function(a,b){return a+b;}//(a, b) => a + b, 
+        ,0));
+// → 10
+    </script>
+    
+</body>
+</html>
