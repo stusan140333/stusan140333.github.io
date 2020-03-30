@@ -6,58 +6,169 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="max.js"></script>
+    <script src="underscore.js"></script>
     <script text="javascript">
-        function sum(a,b){
-            return a+b;
+    //     var x=10;
+
+    //   function fn(){
+    //       console.log(x);
+    //   }
+    //   fn();
+    //   function show(f){
+    //     var x=20;
+    //     (function(){
+    //         f();
+    //     })();
+    // }
+    // show(fn);
+
+    // var a=10
+
+    // function fn(){
+    //    var b=20;
+    //    function bar(){
+    //     console.log(a+b);
+    //   }
+    //     return bar;
+    
+    //   }
+    //    var b=200;
+    //    var x=fn();
+    //     x();
+
+//     function fn(){
+//       var max=10;
+//       return function bar(x){
+//           if(x>max){
+//               console.log(x);
+//           }
+//       };
+//    }
+
+//     var f1=fn(),max=100;
+//     f1(15);
+
+//     function fx(){
+//         var a=1;
+//         return function ber(x){
+//             console.log(a+x);
+//         }
+//     }
+//     var f2=fx();
+//     f2(2);
+
+        var value=11;
+        var initvalue=22;
+
+        function addition(){
+            var value=initvalue;
+
+            return function add(x){
+                value=value+x;
+                initvalue=value;
+                
+            };
+
         }
 
-        var sum2=function(a,b){
-            return a+b;
-        }
+        var func=addition();
 
-        var show=function(f){
-            return f(3,5);
-        }
+        func(33);
+        func(44);
+        console.log(initvalue);
 
-        var show1=function(){
-            return function(a,b){
-                return a+b;
-            }
-        }
+    
+        // function sum(a,b){
+        //     return a+b;
+        // }
 
-        alert(show(sum2));
-        alert(show1()(3,6));
+        // var sum2=function(a,b){
+        //     return a+b;
+        // }
 
-        (function(a,b){
-            return a+b;
-        })(4,5);//一次性用
+        // var show=function(f){
+        //     return f(3,5);
+        // }
 
-        //(a,b) => a+b,(5,5)
+        // var show1=function(){
+        //     return function(a,b){
+        //         return a+b;
+        //     }
+        // }
 
-        alert(typeof(sum2)+" "+sum2(3,4));
+        // alert(show(sum2));
+        // alert(show1()(3,6));
 
-        function reduce(array, combine, start) {
-            let current = start;
-            for (let element of array) {
-              current = combine(current, element);
-            }
-              return current;
-            }
-        var arry=[
-            {name:"英语",credit:2},
-            {name:"软件技术导论",credit:2},
-            {name:"静态网页技术",credit:2},
-            {name:"计算机安装与维护",credit:2},
-            {name:"程序设计基础",credit:2},
-        ]
-        console.log(reduce(arry,
-            function(a,b){
-              return a+b.credit;
-            },0));
+        // (function(a,b){
+        //     return a+b;
+        // })(4,5);//一次性用
+
+        // //(a,b) => a+b,(5,5)
+
+        // alert(typeof(sum2)+" "+sum2(3,4));
+
+        // function reduce(array, combine, start) {
+        //     let current = start;
+        //     for (let element of array) {
+        //       current = combine(current, element);
+        //     }
+        //       return current;
+        //     }
+
         
-        console.log(reduce([1, 2, 3, 4], 
-        function(a,b){return a+b;}//(a, b) => a + b, 
-        ,0));
+
+        // var arry=[
+        //     {name:"英语",credit:2},
+        //     {name:"软件技术导论",credit:2},
+        //     {name:"静态网页技术",credit:2},
+        //     {name:"计算机安装与维护",credit:2},
+        //     {name:"程序设计基础",credit:4},
+        // ]
+
+        // var max=function(arry){
+        //     return reduce(arry,
+        //     function(a,b){
+        //       return a<b.credit?b.credit:a;//最大值
+        //     },0)
+        // }
+
+
+        // arry.stat={max:4,min:2,total:10
+        // }
+
+
+        // arry.stat.total=reduce(arry,
+        //     function(a,b){
+        //       return a+b.credit;//求和
+        //     },0)
+
+
+        // arry.stat.max=reduce(arry,
+        //     function(a,b){
+        //       return a<b.credit?b.credit:a;//最大值
+        //     },0)
+
+
+        // console.log(reduce(arry,
+        //     function(a,b){
+        //       return a<b.credit?b.credit:a;//最大值
+        //     },0));
+
+
+        // console.log(reduce(arry,
+        //     function(a,b){
+        //       return a+b.credit;//求和
+        //     },0));
+
+        // var reduce=3;
+        // console.log(my.max(arry));//4
+        // console.log(_.max(arry,function(it){return it.credit}));
+    
+
+        // console.log(reduce([1, 2, 3, 4], 
+        // function(a,b){return a+b;}//(a, b) => a + b, 
+        // ,0));
 // → 10
     </script>
     
